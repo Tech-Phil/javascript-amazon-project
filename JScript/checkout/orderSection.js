@@ -4,6 +4,7 @@ import formatCurrency from "../utils/moneyCents.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.13/esm/index.js";
 import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOption.js";
 import { renderPaymentSummary } from "./paymentSection.js";
+import {renderCheckoutHeader} from "./checkoutHead.js"
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -109,6 +110,7 @@ export function renderOrderSummary() {
       );
       container.remove();
       renderPaymentSummary();
+      renderCheckoutHeader();
 
     });
   });
@@ -119,6 +121,7 @@ export function renderOrderSummary() {
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
       renderPaymentSummary();
+      renderCheckoutHeader();
     });
   });
 }
