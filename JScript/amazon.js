@@ -100,9 +100,10 @@ function renderProductGrid() {
   const productList = document.querySelector('.js-product-grid');
   const noResultsMessage = document.createElement('div');
 
+
   searchInput.addEventListener('keydown', (event) => {
+    const query = event.target.value.trim();
     if (event.key === 'Enter') {
-      const query = event.target.value.trim();
       if (!query) {
         showNoResultsMessage('No products match the search.');
         return;
